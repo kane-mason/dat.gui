@@ -85,6 +85,7 @@ const hideableGuis = [];
  * @param {Boolean} [params.hideable=true] If true, GUI is shown/hidden by <kbd>h</kbd> keypress.
  * @param {Boolean} [params.closed=false] If true, starts closed
  * @param {Boolean} [params.closeOnTop=false] If true, close/open button shows on top of the GUI
+ * @param {HTMLDivElement} [params.domElement=undefined] A custom dom element
  */
 const GUI = function(pars) {
   const _this = this;
@@ -95,7 +96,7 @@ const GUI = function(pars) {
    * Outermost DOM Element
    * @type {DOMElement}
    */
-  this.domElement = document.createElement('div');
+  this.domElement = pars.domElement || document.createElement('div');
   this.__ul = document.createElement('ul');
   this.domElement.appendChild(this.__ul);
 
